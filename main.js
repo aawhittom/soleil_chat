@@ -5,6 +5,7 @@
 			import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'; 
 
 			let camera, controls, scene, renderer;
+			let chat;
 
 			init();
 			//render(); // remove when using animation loop
@@ -12,7 +13,7 @@
 			function init() {
 
 				scene = new THREE.Scene();
-				//scene.background = new THREE.Color( 0xcccccc );
+				scene.background = new THREE.Color( 0xcccccc, 0);
 				//scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
 
 				renderer = new THREE.WebGLRenderer( { antialias: true } );
@@ -45,8 +46,9 @@
 				//Load Glb
 				const loader = new GLTFLoader();
 				loader.load( './cat_high.glb', function ( glb ) {
-					console.log(glb.scene.children[0].name);
-					scene.add( glb.scene, );
+					chat = glb.scene;
+					//console.log(glb.scene.children[0].name);
+					scene.add(chat);
 
 				}, undefined, function ( error ) {
 
@@ -104,7 +106,10 @@
 
 			function animate() {
 
+				requestAnimationFrame(animate);
+
 				controls.update(); // only required if controls.enableDamping = true, or if controls.autoRotate = true
+				chat.rotation.y += 0.01*0.5;
 
 				render();
 
@@ -115,3 +120,5 @@
 				renderer.render( scene, camera );
 
 			}
+
+		
