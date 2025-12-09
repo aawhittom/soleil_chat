@@ -13,7 +13,7 @@
 			function init() {
 
 				scene = new THREE.Scene();
-				scene.background = new THREE.Color( 0xe6eee0, 0);
+				//scene.background = new THREE.Color( 0xe6eee0, 0);
 				
 				//scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
 
@@ -123,6 +123,7 @@
 			}
 
 		
+
 
 
 
