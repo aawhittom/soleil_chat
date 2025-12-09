@@ -17,7 +17,7 @@
 				
 				//scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
 
-				renderer = new THREE.WebGLRenderer( { antialias: true } );
+				renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				renderer.setAnimationLoop( animate );
@@ -123,5 +123,6 @@
 			}
 
 		
+
 
 
